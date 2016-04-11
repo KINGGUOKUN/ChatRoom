@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-2.2.2.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="signalr/hubs"></script>
+    <script>
+        $(function () {
+            var chat = $.connection.chatHub;
+            chat.client.appendMessage = function (name, message) {
+                $("#ulContent").append('<li><strong>' + name + '</strong>: ' + message + '</li>');
+            }
+            $("#hidName").val(prompt("请输入姓名：", ""));
+            $("txtMessage").focus();
+            $.connection.hub.start().done(function () {
+                $("#btnSend").click(function () {
+                    chat.server.send($("#hidName").val(), $("#txtMessage").val());
+                    $("txtMessage").focus();
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" id="txtMessage"/>
+        <input type="button" id="btnSend" value="发送"/>
+        <input type="hidden" id="hidName"/>
+        <ul id="ulContent">
+        </ul>
+    </div>
+</body>
+</html>
