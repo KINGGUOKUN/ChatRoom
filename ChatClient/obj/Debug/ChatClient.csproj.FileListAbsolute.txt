@@ -30,3 +30,7 @@ D:\TestProjects\ChatRoom\ChatClient\obj\Debug\ChatClient.Properties.Resources.re
 D:\TestProjects\ChatRoom\ChatClient\obj\Debug\ChatClient.csproj.GenerateResource.Cache
 D:\TestProjects\ChatRoom\ChatClient\obj\Debug\ChatClient.exe
 D:\TestProjects\ChatRoom\ChatClient\obj\Debug\ChatClient.pdb
+D:\TestProjects\ChatRoom\ChatClient\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+D:\TestProjects\ChatRoom\ChatClient\bin\Debug\Newtonsoft.Json.dll
+D:\TestProjects\ChatRoom\ChatClient\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+D:\TestProjects\ChatRoom\ChatClient\bin\Debug\Newtonsoft.Json.xml

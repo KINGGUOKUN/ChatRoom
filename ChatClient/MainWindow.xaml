@@ -12,12 +12,19 @@
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal"  Grid.Row="0">
-            <TextBlock>姓名</TextBlock>
-            <TextBox Text="{Binding Name}" Height="30"></TextBox>
-            <TextBlock Margin="10">内容:</TextBlock>
+            <TextBlock VerticalAlignment="Center">姓名</TextBlock>
+            <TextBox Text="{Binding Name}" Height="30" Width="70"></TextBox>
+            <TextBlock Margin="10" VerticalAlignment="Center">内容:</TextBlock>
             <TextBox Text="{Binding Content}" Height="30" Width="300"></TextBox>
-            <Button Command="{Binding Append}" Width="30"/>
+            <Button Command="{Binding Append}" Width="50" Height="30" Content="发    送"/>
         </StackPanel>
-        <ListView Grid.Row="2" ItemsSource="{Binding Contents}"/>
+        <ListView Grid.Row="2" ItemsSource="{Binding Contents}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="姓名" Width="100" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Content}" Header="内容" Width="400" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
