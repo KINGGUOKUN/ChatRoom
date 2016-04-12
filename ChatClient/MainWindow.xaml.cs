@@ -35,7 +35,7 @@ namespace ChatClient
         public MainWindow()
         {
             InitializeComponent();
-            this.ViewModel = new MainViewModel(this.Dispatcher);
+            this.ViewModel = new MainViewModel();
         }
     }
 }

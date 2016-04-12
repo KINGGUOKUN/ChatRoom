@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
@@ -19,22 +20,20 @@ namespace ChatClient
 
         private HubConnection _hubConnection;
         private IHubProxy _hubProxy;
-        private Dispatcher _dispatcher;
 
         #endregion
 
         #region Constructors
 
-        public MainViewModel(Dispatcher dispatcher)
+        public MainViewModel()
         {
-            _dispatcher = dispatcher;
             this.Contents = new ObservableCollection<ChatContent>();
             this.Append = new DelegateCommand(this.AppendExecute);
             _hubConnection = new HubConnection("http://localhost:13842/");
             _hubProxy = _hubConnection.CreateHubProxy("ChatHub");
             _hubProxy.On<string, string>("AppendMessage", (x, y) => 
             {
-                _dispatcher.Invoke(() =>
+                Application.Current.Dispatcher.Invoke(() =>
                 {
                     this.Contents.Add(new ChatContent { Name = x, Content = y });
                 });

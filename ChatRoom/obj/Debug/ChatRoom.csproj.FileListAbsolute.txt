@@ -33,3 +33,7 @@ D:\TestProjects\ChatRoom\ChatRoom\bin\zh-Hans\Microsoft.AspNet.SignalR.Core.reso
 D:\TestProjects\ChatRoom\ChatRoom\bin\zh-Hans\Microsoft.AspNet.SignalR.SystemWeb.resources.dll
 D:\TestProjects\ChatRoom\ChatRoom\obj\Debug\ChatRoom.dll
 D:\TestProjects\ChatRoom\ChatRoom\obj\Debug\ChatRoom.pdb
+D:\TestProjects\ChatRoom\ChatRoom\bin\zh-Hans\Microsoft.Owin.resources.dll
+D:\TestProjects\ChatRoom\ChatRoom\bin\zh-Hans\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\TestProjects\ChatRoom\ChatRoom\bin\zh-Hans\Microsoft.Owin.Security.resources.dll
+D:\TestProjects\ChatRoom\ChatRoom\obj\Debug\ChatRoom.csprojResolveAssemblyReference.cache
