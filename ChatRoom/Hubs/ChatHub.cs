@@ -6,7 +6,7 @@ using Microsoft.AspNet.SignalR;
 
 namespace ChatRoom.Hubs
 {
-    public class ChatHub : Hub
+    public class ChatHub : Hub<IChat>
     {
         /// <summary>
         /// 发送消息至终端
@@ -15,7 +15,7 @@ namespace ChatRoom.Hubs
         /// <param name="message"></param>
         public void Send(string name, string message)
         {
-            Clients.All.appendMessage(name, message);
+            Clients.All.AppendMessage(name, message);
         }
     }
 }
