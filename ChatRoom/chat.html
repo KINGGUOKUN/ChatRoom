@@ -17,7 +17,7 @@
             $("txtMessage").focus();
             $.connection.hub.start().done(function () {
                 $("#btnSend").click(function () {
-                    chat.server.send($("#hidName").val(), $("#txtMessage").val());
+                    chat.server.send($("#hideName").val(), $("#txtMessage").val());
                     $("txtMessage").val();
                     $("#txtMessage").focus();
                 });
@@ -29,7 +29,7 @@
     <div>
         <input type="text" id="txtMessage"/>
         <input type="button" id="btnSend" value="发送"/>
-        <input type="hidden" id="hidName"/>
+        <input type="hidden" id="hideName"/>
         <ul id="ulContent">
         </ul>
     </div>
