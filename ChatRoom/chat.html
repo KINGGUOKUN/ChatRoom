@@ -13,11 +13,14 @@
             chat.client.appendMessage = function (name, message) {
                 $("#ulContent").append('<li><strong>' + name + '</strong>: ' + message + '</li>');
             }
-            $("#hidName").val(prompt("请输入姓名：", ""));
+            $("#hideName").val(prompt("请输入姓名：", ""));
             $("txtMessage").focus();
             $.connection.hub.start().done(function () {
                 $("#btnSend").click(function () {
-                    chat.server.send($("#hideName").val(), $("#txtMessage").val());
+                    chat.server.send($("#hideName").val(), $("#txtMessage").val())
+                    .fail(function (e) {
+                        console.log(e.message + e.data.user + e.data.message);
+                    });
                     $("txtMessage").val();
                     $("#txtMessage").focus();
                 });

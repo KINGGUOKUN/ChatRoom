@@ -15,6 +15,15 @@ namespace ChatRoom.Hubs
         /// <param name="message"></param>
         public void Send(string name, string message)
         {
+            if(message.Contains("<script>"))
+            {
+                throw new HubException("发送内容含有危险脚本", 
+                    new
+                    {
+                        user = name,
+                        message = message
+                    });
+            }
             Clients.All.AppendMessage(name, message);
         }
     }
