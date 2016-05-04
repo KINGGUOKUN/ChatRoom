@@ -15,7 +15,6 @@ namespace ChatRoom.Hubs
         /// <param name="message"></param>
         public void Send(string name, string message)
         {
-            throw new Exception("测试");
             Clients.All.AppendMessage(name, message);
         }
     }
